@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--<link rel="stylesheet" href="styles.css">-->  
+    <title>XedvedHub</title>
+</head>
+
+<body style="background-color: rgb(40, 40, 40); color: white;">
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" > Your key is:</p>
+<p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="KeyText" id="KeyText"> Key thing</p>
+<p class="dateText" style="visibility:hidden;" id = "dateText"></p>
+<button onclick="KeyUpdate()" style="visibility: hidden;">Generate string</button>
+
+<script type="text/javascript">
+    
+    function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
+function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+
+
+
+
+function KeyUpdate(){
+
+    
+    d = new Date();
+
+document.getElementById("dateText").innerHTML = d.getTime.toString();
+document.getElementById("KeyText").innerHTML = makeid(10);
+var start = d.getTime.toString();
+var end = start;
+
+
+}
+
+
+
+window.setInterval(function() {
+    d = new Date();
+
+document.getElementById("dateText").innerHTML = d.getTime.toString();
+document.getElementById("KeyText").innerHTML = makeid(10);
+var start = d.getTime.toString();
+var end = start;
+}, 10000);
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+KeyUpdate();
+
+
+}, false);
+
+
+
+</script>
+</body>
+</html>
